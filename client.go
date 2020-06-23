@@ -59,10 +59,10 @@ var (
 	jsonContentType = "application/json"
 	formContentType = "application/x-www-form-urlencoded"
 
-	jsonCheck = regexp.MustCompile(`(?i:(application|text)/(json|.*\+json|json\-.*)(;|$))`)
-	xmlCheck  = regexp.MustCompile(`(?i:(application|text)/(xml|.*\+xml)(;|$))`)
-
-	bufPool = &sync.Pool{New: func() interface{} { return &bytes.Buffer{} }}
+	jsonCheck         = regexp.MustCompile(`(?i:(application|text)/(json|.*\+json|json\-.*)(;|$))`)
+	xmlCheck          = regexp.MustCompile(`(?i:(application|text)/(xml|.*\+xml)(;|$))`)
+	hdrUserAgentValue = "restry"
+	bufPool           = &sync.Pool{New: func() interface{} { return &bytes.Buffer{} }}
 )
 
 type (
