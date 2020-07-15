@@ -16,7 +16,7 @@ import (
 
 	"golang.org/x/net/proxy"
 
-	"git.corp.kuaishou.com/yanghaotian/resty"
+	"github/yht804421715/resty"
 )
 
 type DropboxError struct {
@@ -59,7 +59,6 @@ func Example_get() {
 func Example_enhancedGet() {
 	// Create a resty client
 	client := resty.New()
-
 	resp, err := client.R().
 		SetQueryParams(map[string]string{
 			"page_no": "1",
@@ -71,7 +70,6 @@ func Example_enhancedGet() {
 		SetHeader("Accept", "application/json").
 		SetAuthToken("BC594900518B4F7EAC75BD37F019E08FBC594900518B4F7EAC75BD37F019E08F").
 		Get("/search_result")
-
 	printOutput(resp, err)
 }
 
